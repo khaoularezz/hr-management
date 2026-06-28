@@ -1,0 +1,522 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+}
+
+/* ================================
+   FOND PRINCIPAL
+================================ */
+.wrap {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #020818 0%, #0a1628 40%, #0d1f3c 70%, #061020 100%);
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ================================
+   ORBES LUMINEUX
+================================ */
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.orb-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(30,80,200,.3) 0%, transparent 70%);
+    top: -100px;
+    left: 200px;
+}
+
+.orb-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(80,20,180,.25) 0%, transparent 70%);
+    bottom: -50px;
+    right: 50px;
+}
+
+.orb-3 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0,120,255,.2) 0%, transparent 70%);
+    bottom: 150px;
+    left: 350px;
+}
+
+/* ================================
+   SIDEBAR
+================================ */
+.sidebar {
+    width: 220px;
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(255,255,255,.06);
+    background: rgba(255,255,255,.03);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+}
+
+.logo {
+    padding: 0 18px 22px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.logo-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #1e50c8, #0ea5e9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.logo-icon i {
+    color: #fff;
+    font-size: 20px;
+}
+
+.logo-text {
+    color: #f0f6ff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.logo-sub {
+    color: rgba(255,255,255,.25);
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+/* ================================
+   NAVIGATION
+================================ */
+.nav {
+    padding: 14px 10px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.nav-sec {
+    color: rgba(255,255,255,.2);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 8px;
+    margin: 14px 0 5px;
+    text-transform: uppercase;
+}
+
+.ni {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: rgba(255,255,255,.35);
+    font-size: 12px;
+    margin-bottom: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .15s;
+    border: 1px solid transparent;
+}
+
+.ni:hover {
+    background: rgba(255,255,255,.06);
+    color: rgba(255,255,255,.7);
+}
+
+.ni.active {
+    background: linear-gradient(135deg, rgba(30,80,200,.3), rgba(14,165,233,.2));
+    color: #93c5fd;
+    border: 1px solid rgba(147,197,253,.15);
+}
+
+.ni i {
+    font-size: 15px;
+}
+
+.ni-badge {
+    margin-left: auto;
+    background: rgba(147,197,253,.15);
+    color: #93c5fd;
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ================================
+   SIDEBAR FOOTER
+================================ */
+.sb-foot {
+    padding: 14px 18px;
+    border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.user-av {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1e50c8, #0ea5e9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.user-name {
+    color: rgba(255,255,255,.7);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.user-role {
+    color: rgba(255,255,255,.25);
+    font-size: 10px;
+}
+
+/* ================================
+   MAIN
+================================ */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ================================
+   TOPBAR
+================================ */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    background: rgba(255,255,255,.02);
+    flex-shrink: 0;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,.3);
+    font-size: 11px;
+}
+
+.breadcrumb strong {
+    color: rgba(255,255,255,.7);
+    font-weight: 500;
+}
+
+.tb-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ib {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: rgba(255,255,255,.4);
+}
+
+.ib i {
+    font-size: 14px;
+}
+
+/* ================================
+   CONTENT
+================================ */
+.content {
+    padding: 24px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* ================================
+   CARTES GLASS
+================================ */
+.card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 12px;
+    padding: 18px;
+    backdrop-filter: blur(8px);
+}
+
+.card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.card-head h2 {
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,.7);
+}
+
+.card-head a {
+    font-size: 11px;
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+/* ================================
+   STATS
+================================ */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.stat {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px;
+    padding: 16px;
+    backdrop-filter: blur(8px);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+}
+
+.stat-lbl {
+    font-size: 10px;
+    color: rgba(255,255,255,.35);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.stat-val {
+    font-size: 22px;
+    font-weight: 700;
+    color: #e8f4ff;
+    letter-spacing: -.5px;
+}
+
+.stat-sub {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 10px;
+    margin-top: 6px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.s-blue  { background: rgba(30,80,200,.2);   color: #93c5fd; }
+.s-sky   { background: rgba(14,165,233,.15); color: #7dd3fc; }
+.s-amber { background: rgba(180,140,0,.15);  color: #fcd34d; }
+.s-teal  { background: rgba(15,118,110,.15); color: #5eead4; }
+
+/* ================================
+   PAGE HEADER
+================================ */
+.page-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.page-head h1 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #e8f4ff;
+    letter-spacing: -.3px;
+}
+
+.page-head p {
+    font-size: 12px;
+    color: rgba(255,255,255,.3);
+    margin-top: 4px;
+}
+
+/* ================================
+   BOUTONS
+================================ */
+.btn-primary {
+    background: linear-gradient(135deg, #1e50c8, #0ea5e9);
+    color: #fff;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(14,165,233,.25);
+}
+
+.btn-primary i {
+    font-size: 14px;
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,.06);
+    color: rgba(255,255,255,.6);
+    border: 1px solid rgba(255,255,255,.1);
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+}
+
+/* ================================
+   PILLS / BADGES
+================================ */
+.pill {
+    font-size: 9px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: .2px;
+}
+
+.pill-on  { background: rgba(30,80,200,.2);  color: #93c5fd; border: 1px solid rgba(147,197,253,.15); }
+.pill-off { background: rgba(255,255,255,.05); color: rgba(255,255,255,.3); border: 1px solid rgba(255,255,255,.08); }
+.pill-warn { background: rgba(180,140,0,.15); color: #fcd34d; border: 1px solid rgba(252,211,77,.15); }
+
+/* ================================
+   TABLEAUX
+================================ */
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: left;
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255,255,255,.25);
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+tbody td {
+    padding: 12px 14px;
+    font-size: 12px;
+    color: rgba(255,255,255,.6);
+    border-bottom: 1px solid rgba(255,255,255,.04);
+}
+
+tbody tr:hover td {
+    background: rgba(255,255,255,.03);
+    color: rgba(255,255,255,.8);
+}
+
+/* ================================
+   FORMULAIRES
+================================ */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255,255,255,.4);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+}
+
+.form-control {
+    width: 100%;
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,.8);
+    outline: none;
+    transition: border-color .15s;
+}
+
+.form-control:focus {
+    border-color: rgba(147,197,253,.4);
+}
+
+.form-control::placeholder {
+    color: rgba(255,255,255,.2);
+}
+
+select.form-control option {
+    background: #0a1628;
+    color: #fff;
+}
+
+/* ================================
+   GRILLE
+================================ */
+.row-2 { display: grid; grid-template-columns: 1.2fr 1fr; gap: 14px; }
+.row-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
